@@ -7,6 +7,9 @@ const config: Config = {
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+
+  darkMode: "class",
+
   theme: {
     extend: {
       fontFamily: {
@@ -14,7 +17,10 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+
+  plugins: [
+    require("@tailwindcss/typography"),
+  ],
 }
 
 export default config
