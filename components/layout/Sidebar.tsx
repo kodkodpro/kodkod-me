@@ -1,11 +1,4 @@
-import Link from "next/link"
-import {
-  Sidebar as SidebarCatalyst,
-  SidebarBody,
-  SidebarHeader,
-  SidebarItem,
-  SidebarSection,
-} from "@/components/catalyst/sidebar"
+import { Sidebar as SidebarCatalyst, SidebarBody, SidebarHeader, SidebarItem, SidebarSection } from "@/components/catalyst/sidebar"
 import { navItems } from "@/components/layout/Navbar"
 
 export default function Sidebar() {
