@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/../kodkod-me-old/.idea/kodkod-me.iml" filepath="$PROJECT_DIR$/../kodkod-me-old/.idea/kodkod-me.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/kodkod-me.iml" filepath="$PROJECT_DIR$/.idea/kodkod-me.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../kodkod-me-old/.idea/kodkod-me-old.iml" filepath="$PROJECT_DIR$/../kodkod-me-old/.idea/kodkod-me-old.iml" />
     </modules>
   </component>
 </project>
