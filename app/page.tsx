@@ -3,6 +3,7 @@ import clsx from "clsx"
 import Image from "next/image"
 import Link from "next/link"
 import ContactMe from "@/components/blocks/ContactMe"
+import { Badge } from "@/components/catalyst/badge"
 import { Button } from "@/components/catalyst/button"
 import { NavbarDivider } from "@/components/catalyst/navbar"
 import Heading from "@/components/typo/Heading"
@@ -13,7 +14,7 @@ const highlights = [
   <>Built and led teams of up to <strong>10 people</strong></>,
   <>Developed more than <strong>50 projects</strong></>,
   <>As a former online and offline <strong>business owner</strong>, I understand the challenges and needs of running a business</>,
-  <>Plus, I&apos;m proud to be in the <strong>top 1% on Upwork</strong>, with over 6,000 hours worked</>,
+  <>Plus, I’m proud to be in the <strong>top 1% on Upwork</strong>, with over 6,000 hours worked</>,
 ]
 
 const links = [
@@ -113,6 +114,7 @@ const skills = [
       { name: "Game Dev", note: "2 years" },
       { name: "UI/UX Design", note: "5 years" },
       { name: "Photography", note: "2 years" },
+      { name: "Love for Cats", note: "Whole life" },
     ],
   },
 ]
@@ -135,8 +137,8 @@ const testimonials = [
 export default function Home() {
   return (
     <main className="pb-24">
-      <div className="mb-16 min-h-[calc(100vh-12rem)]">
-        <div className="mb-8 flex flex-1 flex-col gap-4 pt-8 lg:flex-row lg:items-end lg:gap-8">
+      <div className="mb-14 min-h-[calc(100vh-12rem)]">
+        <div className="mb-8 flex flex-1 flex-col gap-4 pt-12 lg:flex-row lg:items-end lg:gap-8">
           <div className="flex-1">
             <div className="relative mx-auto mb-8 aspect-square max-w-64 sm:mx-0 sm:max-w-96 lg:mb-14">
               <Image
@@ -151,14 +153,25 @@ export default function Home() {
             <div className="mb-2 text-balance uppercase text-gray-700">
               Engineering Manager / Tech Lead
             </div>
-            <h1 className="text-7xl font-medium uppercase">
+            <h1 className="-ml-1 text-7xl font-medium uppercase lg:ml-0">
               Andrew<br />
               Kodkod
             </h1>
           </div>
 
-          <div className="flex-1">
+          <div className="mt-2 flex-1 sm:mt-6 lg:mt-0">
             <div className="prose lg:text-lg">
+              <h2 className="text-balance">
+                I’m{" "}
+                <Badge
+                  color="lime"
+                  className="inline-block text-lg font-bold sm:px-2 sm:text-2xl"
+                >
+                  Available for hire
+                </Badge>,
+                which doesn’t happen often. Here’s why:
+              </h2>
+
               <ul className="-ml-2 lg:-ml-9 lg:space-y-3.5">
                 {highlights.map((text, index) => (
                   <li key={index}>{text}</li>
@@ -171,7 +184,10 @@ export default function Home() {
           <div className="hidden flex-1 lg:block" />
           <div className="flex-1">
             <div className="flex flex-wrap items-center justify-center gap-4 sm:justify-start">
-              <Button href="/#contact-me" className="basis-full sm:mr-4 sm:basis-auto">
+              <Button
+                href="/#contact-me"
+                className="basis-full sm:mr-4 sm:basis-auto"
+              >
                 Get in touch
               </Button>
 
@@ -194,7 +210,7 @@ export default function Home() {
         </div>
       </div>
 
-      <div>
+      <div className="relative">
         <Heading
           id="portfolio"
           className="mb-16"
@@ -219,7 +235,9 @@ export default function Home() {
                 </h3>
               </Link>
 
-              <div className="mt-8 flex flex-col items-start gap-4 text-base md:flex-row md:items-center md:justify-between">
+              <div
+                className="mt-8 flex flex-col items-start gap-4 text-base md:flex-row md:items-center md:justify-between"
+              >
                 <Link href={url}>
                   <p className="text-gray-600">{tagline}</p>
                   <p className="mt-1.5 font-medium text-gray-900">
@@ -251,7 +269,7 @@ export default function Home() {
           Skills
         </Heading>
 
-        <div className="grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-20 md:grid-cols-3">
+        <div className="grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-20 lg:grid-cols-3">
           {skills.map(({ section, items }, index) => (
             <div key={index}>
               <h3 className="text-2xl font-semibold uppercase sm:text-4xl">{section}</h3>
@@ -261,7 +279,7 @@ export default function Home() {
                     <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between">
                       <p className="text-base font-medium text-gray-900">{name}</p>
                       <span className="mx-2 mt-px hidden h-px flex-1 bg-gray-200 sm:block" />
-                      <p className="text-sm text-gray-600">{note}</p>
+                      <p className="whitespace-nowrap text-sm text-gray-600">{note}</p>
                     </div>
                   </li>
                 ))}
@@ -273,10 +291,10 @@ export default function Home() {
 
       <div className="mt-24 sm:mt-36">
         <Heading
-          id="feedback"
-          className="mb-20"
+          id="testimonials"
+          className="mb-20 truncate text-4xl sm:text-6xl"
         >
-          Feedback
+          Testimonials
         </Heading>
 
         <div className="grid max-w-2xl grid-cols-1 lg:mx-0 lg:max-w-none lg:grid-cols-2">

@@ -128,7 +128,7 @@ module.exports = {
       "error",
       {
         "maximum": {
-          "single": 2,
+          "single": 1,
           "multi": 1
         }
       }

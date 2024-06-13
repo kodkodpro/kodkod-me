@@ -12,7 +12,10 @@ export default function Sidebar() {
       <SidebarBody>
         <SidebarSection>
           {navItems.map(({ label, url }) => (
-            <SidebarItem key={label} href={url}>
+            <SidebarItem
+              key={label}
+              href={url}
+            >
               {label}
             </SidebarItem>
           ))}

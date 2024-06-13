@@ -42,7 +42,7 @@ export default function ContactMe() {
       <div className="prose mb-4">
         <p>
           If you want to discuss a project or just say hi, my inbox is always open.
-          Whether you have a question or just want to chat, I&apos;ll try my best to get back to you!
+          Whether you have a question or just want to chat, I’ll try my best to get back to you!
         </p>
       </div>
 

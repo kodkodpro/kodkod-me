@@ -3,6 +3,7 @@
 import * as Headless from "@headlessui/react"
 import React, { useState } from "react"
 import { NavbarItem } from "./navbar"
+import { CheckCircleIcon, XMarkIcon } from "@heroicons/react/24/outline"
 
 function OpenMenuIcon() {
   return (
