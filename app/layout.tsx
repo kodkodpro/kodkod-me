@@ -14,7 +14,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: "Andrew Kodkod — Engineering Manager / Tech Lead",
-  description: "", // TODO: Add a description
+  description: "Discover Andrew Kodkod, an experienced Engineering Manager and Tech Lead specializing in web, mobile, and desktop app development. With nearly 20 years of expertise, Andrew excels in team leadership, agile methodologies, and delivering high-budget projects.",
 }
 
 export default function RootLayout({
