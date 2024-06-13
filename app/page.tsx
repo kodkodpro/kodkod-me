@@ -144,8 +144,8 @@ export default function Home() {
               <Image
                 src="/images/avatar.jpg"
                 alt="Andrew Kodkod's photo"
-                width={2708}
-                height={2708}
+                width={400}
+                height={400}
                 className="size-full rounded-full object-contain"
               />
             </div>
