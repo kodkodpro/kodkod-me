@@ -86,13 +86,15 @@ const skills = [
       { name: "PHP", note: "5 years" },
       { name: "SQL", note: "16 years" },
       { name: "NoSQL", note: "5 years" },
+      { name: "C++", note: "2 years" },
     ],
   },
   {
-    section: "Mobile",
+    section: <>Mobile<span className="text-sm font-medium text-gray-500 sm:text-2xl"> & Desktop</span></>,
     items: [
       { name: "ReactNative", note: "2 years" },
-      { name: "Capacitor/Cordova", note: "3 years" },
+      { name: "Electron", note: "3 years" },
+      { name: "Capacitor", note: "3 years" },
       { name: "Flutter", note: "1 year" },
       { name: "Swift", note: "1 year" },
     ],
@@ -115,6 +117,14 @@ const skills = [
       { name: "UI/UX Design", note: "5 years" },
       { name: "Photography", note: "2 years" },
       { name: "Love for Cats", note: "Whole life" },
+    ],
+  },
+  {
+    section: "Languages",
+    items: [
+      { name: "English", note: "Fluent" },
+      { name: "Ukrainian", note: "Native" },
+      { name: "Russian", note: "Native" },
     ],
   },
 ]
@@ -272,7 +282,7 @@ export default function Home() {
         <div className="grid grid-cols-2 gap-x-6 gap-y-12 sm:gap-x-20 lg:grid-cols-3">
           {skills.map(({ section, items }, index) => (
             <div key={index}>
-              <h3 className="text-2xl font-semibold uppercase sm:text-4xl">{section}</h3>
+              <h3 className="whitespace-nowrap text-2xl font-semibold uppercase sm:text-4xl">{section}</h3>
               <ul className="mt-2 space-y-3 sm:mt-6 sm:space-y-4">
                 {items.map(({ name, note }, index) => (
                   <li key={index}>
