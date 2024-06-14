@@ -8,7 +8,7 @@ export default function Heading({ className, children, ...props }: HeadingProps)
     <h2
       {...props}
       className={twMerge(
-        "border-b-2 border-gray-900 pb-8 text-6xl font-medium uppercase",
+        "border-b-2 border-gray-900 pb-8 text-6xl font-semibold uppercase",
         className,
       )}
     >

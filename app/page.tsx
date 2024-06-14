@@ -26,29 +26,22 @@ const links = [
 
 const projects = [
   {
-    image: "/images/portfolio/811spotter/preview.png",
     title: "811spotter Web & Mobile App",
     tagline: "SaaS automated 811 ticket management for contractors",
-    description: "I was responsible for the development of the entire platform, from the initial concept to the final product. My role encompassed architecture, design, development, testing, deployment, and maintenance.\n" +
-                 "Everything shown in the screenshots and videos below was both developed and designed by me.",
     url: "/811spotter",
     role: "Tech Lead",
     duration: "2 years",
   },
   {
-    image: "/images/portfolio/dinghy/preview.png",
     title: "Dinghy Web & Mobile App",
-    tagline: "Online Insurance Platform for Mobile and Web",
-    description: "In my role, I played a pivotal part in developing a cutting-edge online insurance platform tailored for both mobile and web users. This platform caters to multiple insurers and operates seamlessly across the UK and USA.",
+    tagline: "Comprehensive Online Insurance Platform for Mobile & Web, Connecting Multiple Insurers in the UK & USA",
     url: "/dinghy",
     role: "Tech Lead",
     duration: "5 years",
   },
   {
-    image: "/images/portfolio/schoolcnxt/preview.png",
     title: "SchoolCNXT Web & Mobile App",
-    tagline: "School Social Network for Parents, Teachers, and Students",
-    description: "I was instrumental in developing a comprehensive school social network designed to foster better communication and collaboration among students, parents, and teachers in the USA.",
+    tagline: "School Social Network for Parents, Teachers, and Students in the USA",
     url: "/schoolcnxt",
     role: "Lead Ruby Developer",
     duration: "1 year",
