@@ -80,12 +80,14 @@ const skills = [
       { name: "SQL", note: "16 years" },
       { name: "NoSQL", note: "5 years" },
       { name: "C++", note: "2 years" },
+      { name: "Python", note: "1 year" },
+      { name: "AI/ML", note: "1 year" },
     ],
   },
   {
     section: <>Mobile<span className="text-sm font-medium text-gray-500 sm:text-2xl"> & Desktop</span></>,
     items: [
-      { name: "ReactNative", note: "2 years" },
+      { name: "ReactNative", note: "3 years" },
       { name: "Electron", note: "3 years" },
       { name: "Capacitor", note: "3 years" },
       { name: "Flutter", note: "1 year" },
@@ -205,7 +207,7 @@ export default function Home() {
                   >
                     {label}
                   </Button>
-                  {index < links.length - 1 && <NavbarDivider />}
+                  {index < links.length - 1 && <NavbarDivider key={`${index}-divider`} />}
                 </>
               ))}
             </div>
