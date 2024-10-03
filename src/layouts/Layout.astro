@@ -1,0 +1,32 @@
+---
+import MobileMenu from "../components/layout/MobileMenu.astro";
+import Navbar from "../components/layout/Navbar.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+}
+
+const {
+  title = "Andrew Kodkod — Engineering Manager / Tech Lead",
+  description = "Discover Andrew Kodkod, an experienced Engineering Manager and Tech Lead specializing in web, mobile, and desktop app development. With nearly 20 years of expertise, Andrew excels in team leadership, agile methodologies, and delivering high-budget projects",
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content={description} />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="bg-white font-sans antialiased">
+    <Navbar />
+    <MobileMenu />
+
+    <slot />
+  </body>
+</html>

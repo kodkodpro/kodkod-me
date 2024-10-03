@@ -1,42 +1,41 @@
 {
   "name": "kodkod-me",
-  "version": "0.1.0",
-  "private": true,
+  "type": "module",
+  "version": "0.0.1",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "prettier": "prettier --write ."
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": false,
+    "printWidth": 120,
+    "arrowParens": "always",
+    "bracketSameLine": true,
+    "quoteProps": "consistent",
+    "trailingComma": "all",
+    "singleAttributePerLine": true
   },
   "dependencies": {
-    "@headlessui/react": "^2.0.4",
-    "@heroicons/react": "^2.1.3",
-    "@mdx-js/loader": "^3.0.1",
-    "@mdx-js/react": "^3.0.1",
-    "@next/mdx": "^14.2.4",
+    "@astrojs/check": "^0.9.3",
+    "@astrojs/mdx": "^3.1.7",
+    "@astrojs/tailwind": "^5.1.1",
+    "@tailwindcss/typography": "^0.5.15",
+    "astro": "^4.15.10",
+    "astro-navbar": "^2.3.3",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.2.10",
-    "next": "14.2.4",
-    "react": "^18",
-    "react-dom": "^18",
-    "tailwind-merge": "^2.3.0"
+    "lucide-astro": "^0.447.0",
+    "marked": "^14.1.2",
+    "tailwind-merge": "^2.5.2",
+    "tailwindcss": "^3.4.13",
+    "typescript": "^5.6.2"
   },
   "devDependencies": {
-    "@tailwindcss/typography": "^0.5.13",
-    "@types/mdx": "^2.0.13",
-    "@types/node": "^20",
-    "@types/react": "^18",
-    "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^7.13.0",
-    "@typescript-eslint/parser": "^7.13.0",
-    "eslint": "^8",
-    "eslint-config-next": "14.2.4",
-    "eslint-plugin-import": "^2.29.1",
-    "eslint-plugin-import-newlines": "^1.4.0",
-    "eslint-plugin-tailwindcss": "^3.17.3",
-    "eslint-plugin-unused-imports": "^4.0.0",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "prettier": "^3.3.3",
+    "prettier-plugin-astro": "^0.14.1"
   }
 }

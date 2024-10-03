@@ -1,0 +1,13 @@
+---
+import { cn } from "../../utils/cn";
+
+export const ContentPopWidth = 1152
+
+const { class: className } = Astro.props;
+---
+
+<div
+  class={cn("w-full max-w-6xl mx-auto px-4 sm:px-8 transition-all", className)}
+>
+  <slot />
+</div>

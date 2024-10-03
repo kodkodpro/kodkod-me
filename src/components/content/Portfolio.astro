@@ -1,0 +1,74 @@
+---
+import Heading from "../typo/Heading.astro";
+import {
+  ArrowUpRight,
+  ArrowRight,
+  MoveUpRight,
+  SquareArrowOutUpRight,
+} from "lucide-astro";
+import Button from "../ui/Button.astro";
+
+const projects = [
+  {
+    title: "811spotter Web & Mobile App",
+    tagline: "SaaS automated 811 ticket management for contractors",
+    url: "/811spotter",
+    role: "Tech Lead",
+    duration: "2 years",
+  },
+  {
+    title: "Dinghy Web & Mobile App",
+    tagline:
+      "Comprehensive Online Insurance Platform for Mobile & Web, Connecting Multiple Insurers in the UK & USA",
+    url: "/dinghy",
+    role: "Tech Lead",
+    duration: "5 years",
+  },
+  {
+    title: "SchoolCNXT Web & Mobile App",
+    tagline:
+      "School Social Network for Parents, Teachers, and Students in the USA",
+    url: "/schoolcnxt",
+    role: "Lead Ruby Developer",
+    duration: "1 year",
+  },
+];
+---
+
+<div class="relative">
+  <Heading id="portfolio" class="mb-16"> Portfolio </Heading>
+
+  <div class="-mt-12 space-y-12 divide-y divide-gray-200">
+    {
+      projects.map(({ title, tagline, url, role, duration }, index) => (
+        <div class="pt-12">
+          <a
+            href={url}
+            class="text-balance text-4xl font-semibold tracking-tight text-gray-900 hover:underline"
+          >
+            <h3>
+              {title}
+              <ArrowUpRight class="-ml-1 -mb-0.5 inline-block size-8 stroke-[1.5px]" />
+            </h3>
+          </a>
+
+          <div class="mt-8 flex flex-col items-start gap-4 text-base md:flex-row md:items-center md:justify-between">
+            <a href={url}>
+              <p class="text-gray-600">{tagline}</p>
+              <p class="mt-1.5 font-medium text-gray-900">
+                {role}
+                <span class="text-gray-300"> &#x2022; </span>
+                {duration}
+              </p>
+            </a>
+
+            <Button plain href={url} class="hidden lg:flex sm:pl-3.5">
+              Learn more
+              <ArrowRight data-slot="icon" />
+            </Button>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

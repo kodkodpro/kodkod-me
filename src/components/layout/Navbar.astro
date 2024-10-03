@@ -1,0 +1,53 @@
+---
+import { Image } from "astro:assets";
+import logo from "../../assets/images/logo.svg?raw";
+import VerticalDivider from "../ui/VerticalDivider.astro";
+import Button from "../ui/Button.astro";
+import NavbarItem from "./NavbarItem.astro";
+import ContentWidth from "./ContentWidth.astro";
+
+export const NavItems = [
+  { label: "Portfolio", url: "/#portfolio" },
+  { label: "Skills", url: "/#skills" },
+  { label: "Testimonials", url: "/#testimonials" },
+  { label: "Atomic Blog", url: "/blog" },
+];
+
+const isHomePage = Astro.url.pathname === "/";
+---
+
+<div class="bg-white sticky top-0 z-40">
+  <ContentWidth class="hidden md:block">
+    <div class="flex items-center gap-4 py-4">
+      {
+        !isHomePage && (
+          <a href="/" class="hover:opacity-80">
+            <span class="flex items-center gap-3 px-1">
+              <span class="inline-block size-8">
+                <Fragment set:html={logo} />
+              </span>
+
+              <span class="text-xl font-semibold whitespace-nowrap">
+                Andrew Kodkod
+              </span>
+            </span>
+          </a>
+        )
+      }
+
+      <div class="-ml-4 flex-1"></div>
+
+      <div class="flex items-center gap-0.5">
+        {
+          NavItems.map(({ label, url }) => (
+            <NavbarItem href={url}>{label}</NavbarItem>
+          ))
+        }
+      </div>
+
+      <VerticalDivider class="-ml-2" />
+
+      <Button href="/#contact-me"> Contact Me </Button>
+    </div>
+  </ContentWidth>
+</div>

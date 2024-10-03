@@ -1,0 +1,56 @@
+import Layout from "../layouts/Layout.astro"
+import ContentProseWidth from "../components/layout/ContentProseWidth.astro"
+import AtomicBlogPost from "../components/blog/AtomicBlogPost.astro"
+import AtomicBlogSeparator from "../components/blog/AtomicBlogSeparator.astro"
+import Footer from "../components/content/Footer.astro"
+
+<Layout
+  title="Atomic Blog – Andrew Kodkod"
+  description="Blog about software development, design, and business"
+>
+  <div className="pb-[10vh]">
+    <ContentProseWidth class="max-w-lg space-y-8 pt-[8vh] md:pt-[15vh]">
+      <h1 className="text-3xl md:text-5xl md:text-center font-black tracking-tighter md:mb-20">Atomic Blog</h1>
+
+      <AtomicBlogPost title="Atomic Improvements #5" date="October 3, 2024">
+        Hire people for their soft skills. Hard skills can be learned or replaced by AI, but poor soft skills will make your work together a nightmare.
+      </AtomicBlogPost>
+
+      <AtomicBlogSeparator />
+
+      <AtomicBlogPost title="Atomic Improvements #4" date="October 3, 2024">
+        Invest in marketing. Too many products fail because they focus too much on development and not enough on marketing.
+      </AtomicBlogPost>
+
+      <AtomicBlogSeparator />
+
+      <AtomicBlogPost title="Atomic Improvements #3" date="October 3, 2024">
+        Keep code style uniform across all your technologies: use the same indentation, quotes, trailing commas, etc.
+        Exception: maintain casing conventions specific to each technology.
+      </AtomicBlogPost>
+
+      <AtomicBlogSeparator />
+
+      <AtomicBlogPost title="Atomic Improvements #2" date="October 3, 2024">
+        When naming cloud resources (and not only), use prefixes instead of postfixes for environments (e.g., `production-web` instead of `web-production`). This reduces mistakes.
+
+        1.	Our brain prioritizes the first word.
+        2.	With prefixes, you avoid accidental autocompletion errors in the terminal.
+      </AtomicBlogPost>
+
+      <AtomicBlogSeparator />
+
+      <AtomicBlogPost title="Atomic Improvements #1" date="October 3, 2024">
+        Learn design and typography.
+      </AtomicBlogPost>
+
+      <AtomicBlogSeparator />
+
+      <AtomicBlogPost title="Atomic Improvements #0" date="October 3, 2024">
+        Code is art. Write your code as if you’re writing a poem for another person, not just instructions for a machine.
+      </AtomicBlogPost>
+    </ContentProseWidth>
+
+    <Footer />
+  </div>
+</Layout>

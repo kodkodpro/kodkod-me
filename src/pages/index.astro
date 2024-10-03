@@ -1,0 +1,21 @@
+---
+import Layout from "../layouts/Layout.astro";
+import ContactMe from "../components/content/ContactMe.astro";
+import Portfolio from "../components/content/Portfolio.astro";
+import Skills from "../components/content/Skills.astro";
+import Testimonials from "../components/content/Testimonials.astro";
+import Hero from "../components/content/Hero.astro";
+import Footer from "../components/content/Footer.astro";
+import ContentWidth from "../components/layout/ContentWidth.astro";
+---
+
+<Layout>
+  <ContentWidth class="pb-[10vh] sm:pb-[20vh]">
+    <Hero />
+    <Portfolio />
+    <Skills />
+    <Testimonials />
+    <ContactMe />
+    <Footer />
+  </ContentWidth>
+</Layout>

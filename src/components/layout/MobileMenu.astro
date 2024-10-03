@@ -1,0 +1,74 @@
+---
+import {
+  Astronav,
+  MenuItems,
+  MenuIcon,
+  OpenIcon,
+  CloseIcon,
+} from "astro-navbar";
+import { Menu, X } from "lucide-astro";
+import { cn } from "../../utils/cn";
+import { NavItems } from "./Navbar.astro";
+import Button from "../ui/Button.astro";
+import logo from "../../assets/images/logo.svg?raw";
+---
+
+<Astronav closeOnClick>
+  <div
+    class={cn(
+      "fixed bottom-[calc(env(safe-area-inset-bottom)+theme(spacing.8))] right-[calc(env(safe-area-inset-right)+theme(spacing.8))] z-50",
+      "shadow-[0_0_96px_rgb(255,255,255,0.001)] shadow-white rounded-full",
+      "md:hidden",
+    )}
+  >
+    <MenuIcon>
+      <OpenIcon>
+        <span
+          class="inline-flex items-center justify-center size-12 bg-black rounded-full"
+        >
+          <Menu class="w-6 h-6 text-white" />
+        </span>
+      </OpenIcon>
+      <CloseIcon>
+        <span
+          class="inline-flex items-center justify-center size-12 bg-black rounded-full"
+        >
+          <X class="w-6 h-6 text-white" />
+        </span>
+      </CloseIcon>
+    </MenuIcon>
+  </div>
+
+  <MenuItems class="hidden md:hidden">
+    <div
+      class="fixed inset-0 w-screen h-screen bg-white/80 backdrop-blur-lg z-40 overflow-y-auto flex items-center justify-center"
+    >
+      <div>
+        <a href="/" class="flex flex-col items-center gap-2 mb-12 -mt-16">
+          <span class="inline-block size-8">
+            <Fragment set:html={logo} />
+          </span>
+          <span class="text-lg font-semibold"> Andrew Kodkod </span>
+        </a>
+
+        <ul class="flex flex-col gap-6">
+          {
+            NavItems.map(({ label, url }) => (
+              <li>
+                <a href={url} class="text-4xl font-semibold">
+                  {label}
+                </a>
+              </li>
+            ))
+          }
+
+          <li>
+            <Button href="/#contact-me" class="mt-2 w-full">
+              Get In Touch
+            </Button>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </MenuItems>
+</Astronav>
