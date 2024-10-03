@@ -1,10 +1,10 @@
 ---
-import { Image } from "astro:assets";
-import { marked } from "marked";
-import avatar from "../../assets/images/avatar.jpg";
-import Badge from "../ui/Badge.astro";
-import Button from "../ui/Button.astro";
-import VerticalDivider from "../ui/VerticalDivider.astro";
+import { Image } from "astro:assets"
+import { marked } from "marked"
+import avatar from "../../assets/images/avatar.jpg"
+import Badge from "../ui/Badge.astro"
+import Button from "../ui/Button.astro"
+import VerticalDivider from "../ui/VerticalDivider.astro"
 
 const highlights = [
   "**15+ years of experience** building web, mobile, and desktop apps",
@@ -13,24 +13,20 @@ const highlights = [
   "Developed more than **50 projects**",
   "As a former **business owner**, I understand the challenges and needs of running a business",
   "Plus, I'm proud to be in the **top 1% on Upwork** with over 6,000 hours worked",
-];
+]
 
 const links = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/akodkod/" },
   { label: "Upwork", url: "https://www.upwork.com/freelancers/aemelianenko" },
   { label: "GitHub", url: "https://github.com/akodkod" },
   { label: "Instagram", url: "https://www.instagram.com/truemelianenko/" },
-];
+]
 ---
 
 <div class="mb-14 min-h-[calc(100vh-12rem)]">
-  <div
-    class="mb-8 flex flex-1 flex-col gap-4 pt-12 lg:flex-row lg:items-end lg:gap-8"
-  >
+  <div class="mb-8 flex flex-1 flex-col gap-5 pt-12 lg:flex-row lg:items-end lg:gap-8">
     <div class="flex-1">
-      <div
-        class="relative mx-auto mb-8 aspect-square max-w-64 sm:mx-0 sm:max-w-96 lg:mb-14"
-      >
+      <div class="relative mx-auto mb-6 md:mb-8 aspect-square max-w-64 sm:mx-0 sm:max-w-96 lg:mb-14">
         <Image
           src={avatar}
           alt="Andrew Kodkod's photo"
@@ -41,10 +37,10 @@ const links = [
         />
       </div>
 
-      <div class="mb-2 text-balance uppercase text-gray-700">
+      <div class="mb-1 md:mb-2 text-balance text-center md:text-left uppercase text-gray-600">
         Engineering Manager / Tech Lead
       </div>
-      <h1 class="-ml-1 text-7xl font-semibold uppercase lg:ml-0">
+      <h1 class="-ml-1 text-7xl text-center md:text-left font-semibold uppercase lg:ml-0">
         Andrew<br />
         <span class="tracking-[2px]">Kodkod</span>
       </h1>
@@ -57,8 +53,7 @@ const links = [
             I’m{" "}
             <Badge
               color="lime"
-              class="inline-block text-lg font-bold sm:px-2 sm:text-2xl"
-            >
+              class="inline-block text-lg font-bold sm:px-2 sm:text-2xl">
               Available for hire
             </Badge>,
           </span>
@@ -74,28 +69,29 @@ const links = [
   <div class="flex gap-8">
     <div class="hidden flex-1 lg:block"></div>
     <div class="flex-1">
-      <div
-        class="flex flex-wrap sm:flex-nowrap items-center justify-center gap-4 sm:gap-2 sm:justify-between"
-      >
-        <Button href="/#contact-me" class="basis-full sm:mr-4 sm:basis-auto">
+      <div class="flex flex-wrap items-center gap-2 sm:justify-between">
+        <Button
+          href="/#contact-me"
+          class="basis-full sm:mr-4 sm:basis-auto">
           Get In Touch
         </Button>
 
-        {
-          links.map(({ label, url }, index) => (
-            <>
-              <Button
-                plain
-                href={url}
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                {label}
-              </Button>
-              {index < links.length - 1 && <VerticalDivider />}
-            </>
-          ))
-        }
+        <div class="grid grid-cols-4 md:flex md:items-center md:justify-between md:flex-1 md:gap-1">
+          {
+            links.map(({ label, url }, index) => (
+              <>
+                <Button
+                  plain
+                  href={url}
+                  target="_blank"
+                  rel="noopener noreferrer">
+                  {label}
+                </Button>
+                {index < links.length - 1 && <VerticalDivider class="hidden md:block" />}
+              </>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>

@@ -1,7 +1,7 @@
 ---
-import Heading from "../typo/Heading.astro";
-import Button from "../ui/Button.astro";
-import VerticalDivider from "../ui/VerticalDivider.astro";
+import Heading from "../typo/Heading.astro"
+import Button from "../ui/Button.astro"
+import VerticalDivider from "../ui/VerticalDivider.astro"
 import { MailOpen } from "lucide-astro"
 
 const contactMethods = [
@@ -29,11 +29,16 @@ const contactMethods = [
     label: "Instagram",
     url: "https://www.instagram.com/truemelianenko/",
   },
-];
+]
 ---
 
 <div class="mt-24 sm:mt-36">
-  <Heading id="contact-me" class="mb-16"> Contact Me </Heading>
+  <Heading
+    id="contact-me"
+    class="mb-12 sm:mb-16 pb-6 sm:pb-8 text-5xl sm:text-6xl"
+  >
+    Contact Me
+  </Heading>
 
   <div class="prose mb-4">
     <p>
@@ -42,16 +47,19 @@ const contactMethods = [
     </p>
   </div>
 
-  <div
-    class="flex flex-1 flex-wrap items-center justify-center gap-4 sm:-ml-3 sm:justify-start"
-  >
+  <div class="grid grid-cols-3 md:flex md:items-center md:gap-4 -mx-3 md:justify-start">
     {
       contactMethods.map(({ label, url }, index) => (
         <>
-          <Button plain href={url} target="_blank" rel="noopener noreferrer">
+          <Button
+            plain
+            href={url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {label}
           </Button>
-          {index < contactMethods.length - 1 && <VerticalDivider />}
+          {index < contactMethods.length - 1 && <VerticalDivider class="hidden md:block" />}
         </>
       ))
     }

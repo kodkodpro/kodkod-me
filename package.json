@@ -15,7 +15,6 @@
     "semi": false,
     "printWidth": 120,
     "arrowParens": "always",
-    "bracketSameLine": true,
     "quoteProps": "consistent",
     "trailingComma": "all",
     "singleAttributePerLine": true
