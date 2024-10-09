@@ -1,12 +1,8 @@
 ---
-import Heading from "../typo/Heading.astro";
-import {
-  ArrowUpRight,
-  ArrowRight,
-  MoveUpRight,
-  SquareArrowOutUpRight,
-} from "lucide-astro";
-import Button from "../ui/Button.astro";
+import Heading from "../typo/Heading.astro"
+import { ArrowUpRight, ArrowRight } from "lucide-astro"
+import Button from "../ui/Button.astro"
+import Badge from "../ui/Badge.astro"
 
 const projects = [
   {
@@ -15,32 +11,38 @@ const projects = [
     url: "/811spotter",
     role: "Tech Lead",
     duration: "2 years",
+    budget: "$300K",
   },
   {
     title: "Dinghy Web & Mobile App",
-    tagline:
-      "Comprehensive Online Insurance Platform for Mobile & Web, Connecting Multiple Insurers in the UK & USA",
+    tagline: "Comprehensive Online Insurance Platform for Mobile & Web, Connecting Multiple Insurers in the UK & USA",
     url: "/dinghy",
     role: "Tech Lead",
     duration: "5 years",
+    budget: "$3M",
   },
   {
     title: "SchoolCNXT Web & Mobile App",
-    tagline:
-      "School Social Network for Parents, Teachers, and Students in the USA",
+    tagline: "School Social Network for Parents, Teachers, and Students in the USA",
     url: "/schoolcnxt",
     role: "Lead Ruby Developer",
     duration: "1 year",
+    budget: "$750K",
   },
-];
+]
 ---
 
 <div class="relative">
-  <Heading id="portfolio" class="mb-16"> Portfolio </Heading>
+  <Heading
+    id="portfolio"
+    class="mb-16"
+  >
+    Portfolio
+  </Heading>
 
   <div class="-mt-12 space-y-12 divide-y divide-gray-200">
     {
-      projects.map(({ title, tagline, url, role, duration }, index) => (
+      projects.map(({ title, tagline, url, role, duration, budget }) => (
         <div class="pt-12">
           <a
             href={url}
@@ -55,14 +57,35 @@ const projects = [
           <div class="mt-8 flex flex-col items-start gap-4 text-base md:flex-row md:items-center md:justify-between">
             <a href={url}>
               <p class="text-gray-600">{tagline}</p>
-              <p class="mt-1.5 font-medium text-gray-900">
-                {role}
-                <span class="text-gray-300"> &#x2022; </span>
-                {duration}
+              <p class="mt-1.5">
+                <Badge
+                  color="zinc"
+                  class="font-semibold"
+                >
+                  {role}
+                </Badge>
+
+                <Badge
+                  color="zinc"
+                  class="font-semibold"
+                >
+                  {duration}
+                </Badge>
+
+                <Badge
+                  color="zinc"
+                  class="font-semibold"
+                >
+                  {budget}
+                </Badge>
               </p>
             </a>
 
-            <Button plain href={url} class="hidden lg:flex sm:pl-3.5">
+            <Button
+              plain
+              href={url}
+              class="hidden lg:flex sm:pl-3.5"
+            >
               Learn more
               <ArrowRight data-slot="icon" />
             </Button>
