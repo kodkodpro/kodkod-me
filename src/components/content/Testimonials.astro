@@ -1,15 +1,15 @@
 ---
-import { Image } from "astro:assets";
-import Heading from "../typo/Heading.astro";
-import { cn } from "../../utils/cn";
-import jeff from "../../assets/images/people/jeff.jpg";
-import edward from "../../assets/images/people/edward.jpg";
-import rob from "../../assets/images/people/rob.jpg";
-import { marked } from "marked";
+import { Image } from "astro:assets"
+import Heading from "../typo/Heading.astro"
+import { cn } from "../../utils/cn"
+import jeff from "../../assets/images/people/jeff.jpg"
+import edward from "../../assets/images/people/edward.jpg"
+import rob from "../../assets/images/people/rob.jpg"
+import { marked } from "marked"
 
 const testimonials = [
   {
-    text: `Andrew is a cheat code. He is **the** cheat code to a modern, scalable, totally kicks-ass web architecture. When you ask ChatGPT a tricky coding question, it goes to him for the answer. While other developers are debugging their code, Andrew just stares at the screen until the bugs apologize and fix themselves. His keyboard doesn't have a backspace key because he never makes a mistake.
+    text: `Andrew is a cheat code. He is **the cheat code** to a modern, scalable, totally kicks-ass web architecture. When you ask ChatGPT a tricky coding question, it goes to him for the answer. While other developers are debugging their code, Andrew just stares at the screen until the bugs apologize and fix themselves. His keyboard doesn't have a backspace key because he never makes a mistake.
 
 Andrew is at the top of my list for developers I've led, worked for, or worked with. What really makes him unique, aside from his love of the color yellow, is the breadth of his knowledge, his willingness to help push design in a better direction, and his ability to quickly produce very high-quality solutions. I feel sorry for the alternate timeline where our startup did not find Andrew.
 
@@ -32,7 +32,7 @@ Go ahead… it's ok to cheat!`,
     title: "CEO of Dinghy",
     image: rob,
   },
-];
+]
 ---
 
 <div class="mt-24 sm:mt-36">
@@ -43,43 +43,38 @@ Go ahead… it's ok to cheat!`,
     Testimonials
   </Heading>
 
-  <div
-    class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 divide-y divide-gray-900/10 md:divide-y-0"
-  >
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16 divide-y divide-gray-900/10 md:divide-y-0">
     {
-      testimonials.map(
-        ({ text, name, title, image, fullWidth, borderRight }, index) => (
-          <div
-            class={cn(
-              "flex flex-col",
-              index !== 0 && "pt-8 md:pt-0",
-              borderRight && "md:border-r md:border-gray-900/10 md:pr-16",
-              fullWidth &&
-                "md:col-span-2 md:border-b md:border-gray-900/10 md:pb-16",
-            )}
-          >
-            <figure class="flex flex-auto flex-col justify-between mx-auto">
-              <blockquote class="text-gray-900 prose">
-                <Fragment set:html={marked(text)} />
-              </blockquote>
-              <figcaption class="mt-6 md:mt-10 flex items-center gap-x-6">
-                <Image
-                  class="rounded-full bg-gray-50"
-                  src={image}
-                  alt={`${name}'s photo`}
-                  width={56}
-                  height={56}
-                  densities={[1, 1.5, 2]}
-                />
-                <div class="text-base">
-                  <div class="font-semibold text-gray-900">{name}</div>
-                  <div class="mt-0.5 text-gray-500">{title}</div>
-                </div>
-              </figcaption>
-            </figure>
-          </div>
-        ),
-      )
+      testimonials.map(({ text, name, title, image, fullWidth, borderRight }, index) => (
+        <div
+          class={cn(
+            "flex flex-col",
+            index !== 0 && "pt-8 md:pt-0",
+            borderRight && "md:border-r md:border-gray-900/10 md:pr-16",
+            fullWidth && "md:col-span-2 md:border-b md:border-gray-900/10 md:pb-16",
+          )}
+        >
+          <figure class="flex flex-auto flex-col justify-between mx-auto">
+            <blockquote class="text-gray-900 prose">
+              <Fragment set:html={marked(text)} />
+            </blockquote>
+            <figcaption class="mt-6 md:mt-10 flex items-center gap-x-6">
+              <Image
+                class="rounded-full bg-gray-50"
+                src={image}
+                alt={`${name}'s photo`}
+                width={56}
+                height={56}
+                densities={[1, 1.5, 2]}
+              />
+              <div class="text-base">
+                <div class="font-semibold text-gray-900">{name}</div>
+                <div class="mt-0.5 text-gray-500">{title}</div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      ))
     }
   </div>
 </div>
