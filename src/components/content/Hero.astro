@@ -12,14 +12,14 @@ const highlights = [
   "Built and led teams of up to **10 people**",
   "Architected and developed more than **50 projects**",
   "As a former **business owner**, I understand the challenges and needs of running a business",
-  "Plus, I'm proud to be in the **top 1% on Upwork** with over 6,000 hours worked",
+  "Plus, I'm proud to be in the **top 1% on Upwork** with over 6,000 hours worked"
 ]
 
 const links = [
   { label: "LinkedIn", url: "https://www.linkedin.com/in/akodkod/" },
   { label: "Upwork", url: "https://www.upwork.com/freelancers/aemelianenko" },
   { label: "GitHub", url: "https://github.com/akodkod" },
-  { label: "Instagram", url: "https://www.instagram.com/truemelianenko/" },
+  { label: "Instagram", url: "https://www.instagram.com/truemelianenko/" }
 ]
 ---
 
@@ -53,7 +53,8 @@ const links = [
             I’m{" "}
             <Badge
               color="lime"
-              class="inline-block text-lg font-bold sm:px-2 sm:text-2xl">
+              class="inline-block text-lg font-bold sm:px-2 sm:text-2xl"
+            >
               Available for hire
             </Badge>,
           </span>
@@ -72,7 +73,8 @@ const links = [
       <div class="flex flex-wrap items-center gap-2 sm:justify-between">
         <Button
           href="/#contact-me"
-          class="basis-full sm:mr-4 sm:basis-auto">
+          class="basis-full sm:mr-4 sm:basis-auto"
+        >
           Get In Touch
         </Button>
 
@@ -81,10 +83,12 @@ const links = [
             links.map(({ label, url }, index) => (
               <>
                 <Button
-                  plain
+                  variant="plain"
+                  color="none"
                   href={url}
                   target="_blank"
-                  rel="noopener noreferrer">
+                  rel="noopener noreferrer"
+                >
                   {label}
                 </Button>
                 {index < links.length - 1 && <VerticalDivider class="hidden md:block" />}

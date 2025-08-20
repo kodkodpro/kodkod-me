@@ -16,25 +16,27 @@
     "printWidth": 120,
     "arrowParens": "always",
     "quoteProps": "consistent",
-    "trailingComma": "all",
+    "trailingComma": "none",
     "singleAttributePerLine": true
   },
   "dependencies": {
-    "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^3.1.7",
-    "@astrojs/tailwind": "^5.1.1",
+    "@astrojs/check": "0.9.4",
+    "@astrojs/mdx": "4.3.4",
     "@tailwindcss/typography": "^0.5.15",
-    "astro": "^4.15.10",
+    "@tailwindcss/vite": "^4.1.12",
+    "astro": "5.13.2",
     "astro-navbar": "^2.3.3",
     "clsx": "^2.1.1",
+    "cva": "npm:class-variance-authority@^0.7.1",
     "lucide-astro": "^0.447.0",
     "marked": "^14.1.2",
     "tailwind-merge": "^2.5.2",
-    "tailwindcss": "^3.4.13",
+    "tailwindcss": "^4.1.12",
     "typescript": "^5.6.2"
   },
   "devDependencies": {
     "prettier": "^3.3.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "wrangler": "^4.31.0"
   }
 }
