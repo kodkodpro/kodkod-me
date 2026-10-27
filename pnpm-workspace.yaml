@@ -1,0 +1,8 @@
+minimumReleaseAgeExclude:
+  - '@lucide/astro@1.62.0'
+
+allowBuilds:
+  '@tailwindcss/oxide': true
+  esbuild: true
+  sharp: true
+  workerd: true
