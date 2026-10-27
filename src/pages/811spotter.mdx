@@ -1,230 +1,97 @@
-import { Image } from "astro:assets"
+import screenshot4 from "../assets/images/portfolio/811spotter/4.png"
+import screenshot3 from "../assets/images/portfolio/811spotter/3.png"
+import screenshot2 from "../assets/images/portfolio/811spotter/1.png"
+import screenshot1 from "../assets/images/portfolio/811spotter/mobile-set-2.png"
+import screenshot0 from "../assets/images/portfolio/811spotter/mobile-set-1.png"
+import ProjectImage from "../components/content/ProjectImage.astro"
+import projectPreview from "../assets/images/portfolio/811spotter/2.png"
 import Layout from "../layouts/Layout.astro"
-import ContentProseWidth from "../components/layout/ContentProseWidth.astro"
-import ContentPop, { ContentPopWidth } from "../components/layout/ContentProsePop.astro"
-import Footer from "../components/content/Footer.astro"
-import Button from "../components/ui/Button.astro"
-import Badge from "../components/ui/Badge.astro"
-import DescriptionList from "../components/ui/DescriptionList.astro"
-import DescriptionTerm from "../components/ui/DescriptionTerm.astro"
-import DescriptionDetails from "../components/ui/DescriptionDetails.astro"
-import img1 from "../assets/images/portfolio/811spotter/1.png"
-import img2 from "../assets/images/portfolio/811spotter/2.png"
-import img3 from "../assets/images/portfolio/811spotter/3.png"
-import img4 from "../assets/images/portfolio/811spotter/4.png"
-import mobileSet1 from "../assets/images/portfolio/811spotter/mobile-set-1.png"
-import mobileSet2 from "../assets/images/portfolio/811spotter/mobile-set-2.png"
+import { GraphSpec } from "../registry/default/graph-spec/graph-spec"
 
-<Layout
-  title="811spotter Web & Mobile App – Andrew Kodkod"
-  description="811spotter is a SaaS automated 811 ticket management for contractors"
->
-  <div className="pb-[10vh]">
-    <ContentProseWidth class="mt-8 mb-3 md:mt-16 md:mb-6 md:text-center text-balance">
-      <h1 className="text-3xl md:text-5xl font-black tracking-tighter">811spotter Mobile and Web</h1>
-      <p className="mt-1 md:mt-2 md:text-lg text-zinc-700">811spotter is a SaaS automated 811 ticket management for contractors</p>
-    </ContentProseWidth>
+<Layout title="811spotter Web & Mobile App | Andrew Kodkod" description="Automated 811 ticket management for contractors">
+  <header className="page-heading">
+    <p className="eyebrow">selected work / case study</p>
+    <h1>811spotter</h1>
+    <p>Automated 811 ticket management for contractors</p>
+  </header>
+  <ProjectImage src={projectPreview} alt="811spotter web app" href="/images/portfolio/811spotter/2.jpeg" eager />
+  <GraphSpec title="project details" rows={[{ label: 'Role', value: 'Tech Lead' }, { label: 'Duration', value: '2 years' }, { label: 'Location', value: 'Vancouver' }]} />
+  <article className="prose">
 
-    <ContentPop class="mb-6 md:mb-12">
-      <a href="/images/portfolio/811spotter/2.jpeg" target="_blank">
-        <Image
-          src={img2}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-    </ContentPop>
+## What I worked on
 
-    <ContentProseWidth class="prose mb-6 md:mb-10">
-      <h2 className="mb-2">Overview</h2>
+I rebuilt an outdated platform, from architecture and design through development, testing, deployment and maintenance. I also helped make product decisions. The screenshots and videos show work I both designed and developed.
 
-      <div className="not-prose mb-6 md:mb-12">
-        <DescriptionList>
-          <DescriptionTerm>Role</DescriptionTerm>
-          <DescriptionDetails>Tech Lead</DescriptionDetails>
+When I joined, the team handled bills, payments and customer records by hand. The app [looked like this](/images/portfolio/811spotter/old.jpg). I automated payments and made customer signup simpler.
 
-          <DescriptionTerm>Duration</DescriptionTerm>
-          <DescriptionDetails>2 years</DescriptionDetails>
+The original Rails app had React mixed into it. I separated the backend from a new React frontend, added TypeScript and used Capacitor to bring the app to iOS and Android. Python scripts that someone had to run every day became scheduled Sidekiq jobs.
 
-          <DescriptionTerm>Location</DescriptionTerm>
-          <DescriptionDetails>Vancouver <span className="inline-block scale-150 ml-1">🇨🇦</span></DescriptionDetails>
-        </DescriptionList>
-      </div>
+The work made the platform more efficient, stable and secure and brought it in line with industry standards.
 
-      ## TL;DR
+## Features
 
-      - Transformed an outdated software platform, handling everything from design to deployment
-      - Key features include AI ticket recognition, automated billing, and event-driven architecture
-      - Split the monolithic Rails app into separate backend and React frontend applications, added TypeScript, and automated Python scripts with Sidekiq
-      - This overhaul also enabled easy launch of mobile apps for iOS and Android
-      - The result is a more efficient, stable, and secure platform
+- AI recognition to identify and process tickets.
+- An event-driven architecture to improve responsiveness and support growth.
+- Automated billing through Stripe.
+- Company accounts with user management, permissions and feature flags.
+- Tools to organize tickets and fetch, update and renew them through web scraping and email parsing.
+- An interactive map with real-time updates.
+- Caching and improved data loading.
+- Offline access and background jobs.
+- Automated image processing and PDF generation with customizable templates.
 
-      ## Responsibilities
+### Frontend technologies
 
-      I was responsible for the development of the entire platform, from the initial concept to the final product. My role encompassed architecture, design, development, testing, deployment, maintenance, and contributing to product decisions.
+<div className="flex gap-1.5 flex-wrap">
+  <span className="tech-tag">React</span>
+  <span className="tech-tag">TypeScript</span>
+  <span className="tech-tag">TailwindCSS</span>
+  <span className="tech-tag">React Query</span>
+  <span className="tech-tag">Framer Motion</span>
+  <span className="tech-tag">Google Maps API</span>
+  <span className="tech-tag">WebSockets</span>
+  <span className="tech-tag">Capacitor</span>
+  <span className="tech-tag">Zustand</span>
+  <span className="tech-tag">Zod</span>
+  <span className="tech-tag">Stripe</span>
+  <span className="tech-tag">Vercel</span>
+  <span className="tech-tag">Heroku</span>
+</div>
 
-      Everything shown in the screenshots and videos below was both developed and designed by me.
+### Backend technologies
 
-      ## Features
+<div className="flex gap-1.5 flex-wrap">
+  <span className="tech-tag">Ruby on Rails</span>
+  <span className="tech-tag">PostgreSQL</span>
+  <span className="tech-tag">Redis</span>
+  <span className="tech-tag">Sidekiq</span>
+  <span className="tech-tag">Webhooks</span>
+  <span className="tech-tag">Stripe</span>
+  <span className="tech-tag">Ferrum</span>
+  <span className="tech-tag">Light Services</span>
+  <span className="tech-tag">TailwindCSS</span>
+  <span className="tech-tag">Kemal</span>
+  <span className="tech-tag">Docker</span>
+  <span className="tech-tag">GCP</span>
+  <span className="tech-tag">Heroku</span>
+</div>
 
-      - **AI-Powered Ticket Recognition:** Automatically identify and process tickets using artificial intelligence
-      - **Event-Driven Architecture:** Enhance system responsiveness and scalability with an event-driven design
-      - **Automated Billing with Stripe:** Streamline billing processes with automated Stripe integration
-      - **SaaS Company Management:** Manage users, permissions, and feature flags efficiently
-      - **Ticket Management:** Simplify the organization and handling of tickets
-      - **Ticket Fetching & Updating:** Retrieve, update, and renew tickets using web scraping and email parsing techniques
-      - **Dynamic Map:** Provide real-time, interactive mapping features
-      - **Caching and Advanced Data Loading:** Improve performance with efficient data caching and loading strategies
-      - **Offline Mode:** Ensure functionality even without an internet connection
-      - **Background Jobs:** Handle tasks asynchronously with background job processing
-      - **Image Processing:** Automate and enhance image manipulation and processing
-      - **PDF Generation:** Create dynamic, customizable PDF templates for various needs
+  </article>
 
-      ## Key Contributions
-
-      When I started working on this project, it felt like using software from 2002 (it was <a href="/images/portfolio/811spotter/old.jpg" target="_blank">like this</a>).
-      They were doing everything by hand — bills, payments, and keeping track of customers.
-
-      So, I upgraded their system. Now, payments happen automatically, and signing up new customers is a breeze.
-
-      Originally, it was a big, clunky Rails app with some React mixed in.
-      I split it into two parts: a backend and a new React frontend that I built from scratch.
-      It helped us to easily launch mobile apps for iOS and Android using Capacitor.
-
-      I also added TypeScript to the frontend to make the code better and easier for developers to work with.
-
-      They had a bunch of Python scripts that someone had to run every day.
-      I turned those into Sidekiq jobs that run on their own now.
-
-      On top of all that, I made the app more stable and secure to meet industry standards.
-
-      ### Frontend Technologies
-      <div className="flex gap-1.5 flex-wrap">
-        <Badge>React</Badge>
-        <Badge>TypeScript</Badge>
-        <Badge>TailwindCSS</Badge>
-        <Badge>React Query</Badge>
-        <Badge>Framer Motion</Badge>
-        <Badge>Google Maps API</Badge>
-        <Badge>WebSockets</Badge>
-        <Badge>Capacitor</Badge>
-        <Badge>Zustand</Badge>
-        <Badge>Zod</Badge>
-        <Badge>Stripe</Badge>
-        <Badge>Vercel</Badge>
-        <Badge>Heroku</Badge>
-      </div>
-
-      ### Backend Technologies
-      <div className="flex gap-1.5 flex-wrap">
-        <Badge>Ruby on Rails</Badge>
-        <Badge>PostgreSQL</Badge>
-        <Badge>Redis</Badge>
-        <Badge>Sidekiq</Badge>
-        <Badge>Webhooks</Badge>
-        <Badge>Stripe</Badge>
-        <Badge>Ferrum</Badge>
-        <Badge>Light Services</Badge>
-        <Badge>TailwindCSS</Badge>
-        <Badge>Kemal</Badge>
-        <Badge>Docker</Badge>
-        <Badge>GCP</Badge>
-        <Badge>Heroku</Badge>
-      </div>
-
-      <div className="not-prose flex flex-col items-center justify-center py-16 gap-4">
-        <div className="text-lg font-semibold text-black dark:text-white">
-          Like what you see?
-        </div>
-        <Button
-          href="/#contact-me"
-        >
-          Contact Me
-        </Button>
-      </div>
-
-      <h1 className="text-center">Screenshots and Videos</h1>
-    </ContentProseWidth>
-
-    <ContentPop class="space-y-6 md:space-y-12">
-      <div className="rounded overflow-hidden aspect-video">
-        <iframe
-          width="100%"
-          height="100%"
-          src={`https://www.youtube.com/embed/10jJD6q1Gv0`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded YouTube Video"
-        />
-      </div>
-
-      <div className="rounded overflow-hidden aspect-video">
-        <iframe
-          width="100%"
-          height="100%"
-          src={`https://www.youtube.com/embed/075D0PFJn6I`}
-          frameBorder="0"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-          allowFullScreen
-          title="Embedded YouTube Video"
-        />
-      </div>
-
-      <a href="/images/portfolio/811spotter/mobile-set-1.png" target="_blank" className="block">
-        <Image
-          src={mobileSet1}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-
-      <a href="/images/portfolio/811spotter/mobile-set-2.png" target="_blank" className="block">
-        <Image
-          src={mobileSet2}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-
-      <a href="/images/portfolio/811spotter/1.jpeg" target="_blank" className="block">
-        <Image
-          src={img1}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-
-      <a href="/images/portfolio/811spotter/3.jpeg" target="_blank" className="block">
-        <Image
-          src={img3}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-
-      <a href="/images/portfolio/811spotter/4.jpeg" target="_blank" className="block">
-        <Image
-          src={img4}
-          alt="811spotter"
-          width={ContentPopWidth}
-          densities={[1, 1.5, 2]}
-          className="rounded"
-        />
-      </a>
-    </ContentPop>
-
-    <Footer />
-
+  <section className="project-gallery" aria-labelledby="gallery-title">
+    <h2 id="gallery-title">Screenshots</h2>
+    <ProjectImage src={screenshot0} alt="811spotter mobile app, first set of screens" href="/images/portfolio/811spotter/mobile-set-1.png" />
+    <ProjectImage src={screenshot1} alt="811spotter mobile app, second set of screens" href="/images/portfolio/811spotter/mobile-set-2.png" />
+    <ProjectImage src={screenshot2} alt="811spotter web app, screen 1" href="/images/portfolio/811spotter/1.jpeg" />
+    <ProjectImage src={screenshot3} alt="811spotter web app, screen 3" href="/images/portfolio/811spotter/3.jpeg" />
+    <ProjectImage src={screenshot4} alt="811spotter web app, screen 4" href="/images/portfolio/811spotter/4.jpeg" />
+  </section>
+  <div className="media-links">
+    <h2>Videos</h2>
+    <ul>
+    <li><a href="https://www.youtube.com/watch?v=10jJD6q1Gv0" target="_blank" rel="noopener noreferrer">Platform walkthrough →</a></li>
+    <li><a href="https://www.youtube.com/watch?v=075D0PFJn6I" target="_blank" rel="noopener noreferrer">Product demo →</a></li>
+    </ul>
   </div>
+  <p className="intro-links"><a href="/#contact-me">Get in touch →</a><a href="/#portfolio">More selected work →</a></p>
 </Layout>

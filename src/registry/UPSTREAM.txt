@@ -1,0 +1,13 @@
+Source: https://www.mdxcn.dev/
+Repository: https://github.com/shadcn-labs/mdxcn
+Retrieved: 2026-10-27
+Registry items: graph-stat, graph-spec, quote, callout (including shared frame utilities).
+License: MIT, see LICENSE.
+
+Local changes:
+- Utility import points to src/utils/cn.ts.
+- initial={false} keeps all content visible in static Astro HTML without hydration.
+- Quote accepts an optional portrait for the attribution.
+- Theme and dashed-frame styles are supplied by src/styles/global.css.
+
+These components render on the server. Do not add client directives unless interaction requires them.

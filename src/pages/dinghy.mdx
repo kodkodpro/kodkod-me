@@ -1,109 +1,73 @@
+import ProjectImage from "../components/content/ProjectImage.astro"
+import projectPreview from "../assets/images/portfolio/dinghy/preview.png"
 import Layout from "../layouts/Layout.astro"
-import ContentProseWidth from "../components/layout/ContentProseWidth.astro"
-import Footer from "../components/content/Footer.astro"
-import Badge from "../components/ui/Badge.astro"
-import DescriptionList from "../components/ui/DescriptionList.astro"
-import DescriptionTerm from "../components/ui/DescriptionTerm.astro"
-import DescriptionDetails from "../components/ui/DescriptionDetails.astro"
+import { GraphSpec } from "../registry/default/graph-spec/graph-spec"
 
-<Layout
-  title="Dinghy Web & Mobile App – Andrew Kodkod"
-  description="Revolutionary online insurance platform for mobile and web, serving multiple insurers across the UK and USA"
->
-  <div className="pb-[10vh]">
-    <ContentProseWidth class="mt-8 mb-6 md:mt-16 md:mb-12 md:text-center text-balance">
-      <h1 className="text-3xl md:text-5xl font-black tracking-tighter">Dinghy Web & Mobile</h1>
-      <p className="mt-1 md:mt-2 md:text-lg text-zinc-700">Revolutionary online insurance platform for mobile and web, serving multiple insurers across the UK and USA</p>
-    </ContentProseWidth>
+<Layout title="Dinghy Web & Mobile App | Andrew Kodkod" description="Web and mobile insurance platform connecting insurers in the UK and USA">
+  <header className="page-heading">
+    <p className="eyebrow">selected work / case study</p>
+    <h1>Dinghy</h1>
+    <p>Web and mobile insurance platform connecting insurers in the UK and USA</p>
+  </header>
+  <ProjectImage src={projectPreview} alt="Dinghy logo" href="/images/portfolio/dinghy/preview.png" eager compact />
+  <GraphSpec title="project details" rows={[{ label: 'Primary Role', value: 'Tech Lead' }, { label: 'Team Size', value: '10 people' }, { label: 'Duration', value: '5 years' }, { label: 'Location', value: 'London' }]} />
+  <article className="prose">
 
-    <ContentProseWidth class="prose mb-6 md:mb-10">
-      <h2 className="mb-2">Overview</h2>
+## What I worked on
 
-      <div className="not-prose mb-6 md:mb-12">
-        <DescriptionList>
-          <DescriptionTerm>Primary Role</DescriptionTerm>
-          <DescriptionDetails>Tech Lead</DescriptionDetails>
+I joined Dinghy as one of its first developers. I designed the architecture, wrote code, managed the team and sometimes took on product management. I enjoyed having a hand in all of it.
 
-          <DescriptionTerm>Team Size</DescriptionTerm>
-          <DescriptionDetails>10 people</DescriptionDetails>
+The platform supports multiple insurers in the UK and USA, with apps for customers and insurance agents.
 
-          <DescriptionTerm>Duration</DescriptionTerm>
-          <DescriptionDetails>5 years</DescriptionDetails>
+## Building the team
 
-          <DescriptionTerm>Location</DescriptionTerm>
-          <DescriptionDetails>London <span className="inline-block scale-150 ml-1">🇬🇧</span></DescriptionDetails>
-        </DescriptionList>
-      </div>
+I built the development team from scratch, interviewed candidates and hired developers from Ukraine. That helped keep costs down while bringing in people who could do the work.
 
-      ## TL;DR
+I trained new team members, mentored developers and set up automated workflows. I also organized team activities and meetings with clients in other countries. Humor and encouragement were part of how I kept the team motivated.
 
-      - In a startup setting, took on multiple roles including Software Architect, Lead Developer, Team Manager, and Product Manager
-      - Key features developed include a product builder, dynamic pricing engine, pay-per-second billing, document generation, self-service portal, agent web app, automated processing, real-time analytics, and third-party integrations
-      - Contributions include designing a scalable system, selecting optimal tools, establishing efficient workflows, mentoring the team, hiring talent from Ukraine, and maintaining team morale
-      - Achievements include building the team from scratch and creating a modular architecture that reduced the time to launch new insurance products to just 2-3 weeks
+## Architecture
 
-      ## Responsibilities
+I chose the tools and designed a modular system so we could reuse parts across insurance products. It could scale and adapt as the business grew. Launching a new insurance product typically took 2-3 weeks.
 
-      In the startup environment, my role encompassed various responsibilities. I acted as a Software Architect, Lead Developer, Team Manager, and occasionally a Product Manager. Honestly, I thoroughly enjoyed wearing all these hats!
+## Features
 
-      ## Management Achievements
+- A product builder for launching insurance products.
+- A pricing engine that lets people create formulas without a developer.
+- Pay-per-second billing.
+- Automatic generation of policy documents and certificates.
+- A self-service portal where customers manage their policies.
+- An agent app for managing policies and claims.
+- Automated underwriting and claims processing.
+- Real-time analytics and reporting.
+- Integrations with QuickBooks, Salesforce, Stripe, Twilio and SendGrid.
 
-      As one of the first developers on the project, I played a key role in building the team from the ground up. Conducted interviews and hired new developers, forming a strong team. Organized engaging team-building activities and facilitated meetings with clients in other countries. Ensured new team members were well-prepared to contribute by providing thorough training and mentorship.
+### Frontend technologies
 
-      ## Architectural Achievements
+<div className="flex gap-1.5 flex-wrap">
+  <span className="tech-tag">React</span>
+  <span className="tech-tag">Redux</span>
+  <span className="tech-tag">Redux Logic</span>
+  <span className="tech-tag">Capacitor</span>
+  <span className="tech-tag">Stripe</span>
+  <span className="tech-tag">Heroku</span>
+</div>
 
-      Designed a flexible system with a modular, LEGO-like architecture, making it easy to develop new insurance products quickly. This innovative design enabled rapid and efficient product development, allowing the platform to adapt and grow seamlessly.
+### Backend technologies
 
-      As a result, launching a new insurance product typically took just 2-3 weeks.
+<div className="flex gap-1.5 flex-wrap">
+  <span className="tech-tag">Ruby on Rails</span>
+  <span className="tech-tag">PostgreSQL</span>
+  <span className="tech-tag">Redis</span>
+  <span className="tech-tag">Sidekiq</span>
+  <span className="tech-tag">Webhooks</span>
+  <span className="tech-tag">Stripe</span>
+  <span className="tech-tag">Light Services</span>
+  <span className="tech-tag">TailwindCSS</span>
+  <span className="tech-tag">Docker</span>
+  <span className="tech-tag">AWS</span>
+  <span className="tech-tag">Heroku</span>
+</div>
 
-      ## Features
-
-      - **Product Builder:** Quickly launch new insurance products with ease
-      - **Dynamic Pricing Engine:** Create custom pricing formulas without needing a developer
-      - **Pay-Per-Second Billing:** Implement a flexible billing system for insurance products
-      - **Document Generation:** Automatically generate insurance documents and certificates
-      - **Self-Service Portal:** Allow customers to manage their policies independently
-      - **Agent Web App:** Provide insurance agents with a web app to manage policies and claims
-      - **Automated Processing:** Streamline underwriting and claims processing with automation
-      - **Real-Time Analytics:** Access real-time analytics and reporting for better decision-making
-      - **Third-Party Integrations:** Seamlessly integrate with services like QuickBooks, Salesforce, Stripe, Twilio, and SendGrid
-
-      ## Key Contributions
-
-      - **Building Blocks:** Designed a robust and adaptable system capable of scaling and evolving effortlessly
-      - **Choosing Tools:** Selected the best tools and technologies to ensure the platform's optimal performance
-      - **Smooth Workflows:** Established efficient and automated workflows for the tech team, boosting overall productivity
-      - **Team Learning:** Mentored and guided team members, fostering a culture of continuous learning and improvement
-      - **Hiring Team:** Recruited talented individuals from Ukraine, saving costs and building a high-performing team
-      - **Happy Team:** Maintained team morale and motivation through humor and encouragement, creating a fun and collaborative work environment
-
-      ### Frontend Technologies
-      <div className="flex gap-1.5 flex-wrap">
-        <Badge>React</Badge>
-        <Badge>Redux</Badge>
-        <Badge>Redux Logic</Badge>
-        <Badge>Capacitor</Badge>
-        <Badge>Stripe</Badge>
-        <Badge>Heroku</Badge>
-      </div>
-
-      ### Backend Technologies
-      <div className="flex gap-1.5 flex-wrap">
-        <Badge>Ruby on Rails</Badge>
-        <Badge>PostgreSQL</Badge>
-        <Badge>Redis</Badge>
-        <Badge>Sidekiq</Badge>
-        <Badge>Webhooks</Badge>
-        <Badge>Stripe</Badge>
-        <Badge>Light Services</Badge>
-        <Badge>TailwindCSS</Badge>
-        <Badge>Docker</Badge>
-        <Badge>AWS</Badge>
-        <Badge>Heroku</Badge>
-      </div>
-    </ContentProseWidth>
-
-    <Footer />
-
-  </div>
+  </article>
+  <p className="intro-links"><a href="/#contact-me">Get in touch →</a><a href="/#portfolio">More selected work →</a></p>
 </Layout>

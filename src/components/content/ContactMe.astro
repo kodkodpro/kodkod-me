@@ -1,68 +1,34 @@
 ---
-import Heading from "../typo/Heading.astro"
-import Button from "../ui/Button.astro"
-import VerticalDivider from "../ui/VerticalDivider.astro"
-import { MailOpen } from "@lucide/astro"
-
-const contactMethods = [
-  {
-    label: "Email",
-    url: "mailto:andrew@kodkod.me",
-  },
-  {
-    label: "Telegram",
-    url: "https://t.me/akodkod",
-  },
-  {
-    label: "LinkedIn",
-    url: "https://linkedin.com/in/akodkod/",
-  },
-  {
-    label: "GitHub",
-    url: "https://github.com/akodkod",
-  },
-  {
-    label: "Upwork",
-    url: "https://www.upwork.com/freelancers/aemelianenko",
-  },
-  {
-    label: "Instagram",
-    url: "https://www.instagram.com/truemelianenko/",
-  },
-]
+import { contactMethods } from "../../data/contactme"
 ---
 
-<div class="mt-24 sm:mt-36">
-  <Heading
-    id="contact-me"
-    class="mb-12 sm:mb-16 pb-6 sm:pb-8 text-5xl sm:text-6xl"
+<section
+  id="contact-me"
+  class="section contact"
+  aria-labelledby="contact-heading"
+>
+  <div class="section-heading">
+    <span aria-hidden="true">04 /</span>
+    <h2 id="contact-heading">Keep in touch</h2>
+  </div>
+  <p>Have a question, an interesting problem, or just want to chat?</p>
+  <a
+    class="email-link"
+    href="mailto:andrew@kodkod.me"
   >
-    Contact Me
-  </Heading>
-
-  <div class="prose mb-4">
-    <p>
-      Whether you have a question or just want to chat, my inbox is always open
-      <MailOpen class="inline size-4 text-zinc-500 -translate-y-0.5" />
-    </p>
+    andrew@kodkod.me <span aria-hidden="true">↗</span>
+  </a>
+  <div class="social-links">
+    {contactMethods
+      .filter((m) => m.label !== "Email")
+      .map(({ label, url }) => (
+        <a
+          href={url}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {label} <span aria-hidden="true">↗</span>
+        </a>
+      ))}
   </div>
-
-  <div class="grid grid-cols-3 md:flex md:items-center md:gap-4 -mx-3 md:justify-start">
-    {
-      contactMethods.map(({ label, url }, index) => (
-        <>
-          <Button
-            plain
-            color="none"
-            href={url}
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {label}
-          </Button>
-          {index < contactMethods.length - 1 && <VerticalDivider class="hidden md:block" />}
-        </>
-      ))
-    }
-  </div>
-</div>
+</section>

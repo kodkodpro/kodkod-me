@@ -1,102 +1,56 @@
 ---
 import { Image } from "astro:assets"
-import { marked } from "marked"
 import avatar from "../../assets/images/avatar.jpg"
-import Badge from "../ui/Badge.astro"
-import Button from "../ui/Button.astro"
-import VerticalDivider from "../ui/VerticalDivider.astro"
-
-const highlights = [
-  "**15+ years of experience** building web, mobile, and desktop apps",
-  "Designed and developed **multi-million dollar projects**",
-  "Built and led teams of up to **10 people**",
-  "Architected and developed more than **50 projects**",
-  "As a former **business owner**, I understand the challenges and needs of running a business",
-  "Plus, I'm proud to be in the **top 1% on Upwork** with over 6,000 hours worked"
-]
-
-const links = [
-  { label: "LinkedIn", url: "https://www.linkedin.com/in/akodkod/" },
-  { label: "Upwork", url: "https://www.upwork.com/freelancers/aemelianenko" },
-  { label: "GitHub", url: "https://github.com/akodkod" },
-  { label: "Instagram", url: "https://www.instagram.com/truemelianenko/" }
-]
+import { GraphStat } from "../../registry/default/graph-stat/graph-stat"
+import { Callout } from "../../registry/default/callout/callout"
 ---
 
-<div class="mb-14 min-h-[calc(100vh-12rem)]">
-  <div class="mb-8 flex flex-1 flex-col gap-5 pt-12 lg:flex-row lg:items-end lg:gap-8">
-    <div class="flex-1">
-      <div class="relative mx-auto mb-6 md:mb-8 aspect-square max-w-64 sm:mx-0 sm:max-w-96 lg:mb-14">
-        <Image
-          src={avatar}
-          alt="Andrew Kodkod's photo"
-          width={400}
-          height={400}
-          densities={[1, 1.5, 2]}
-          class="size-full rounded-full object-contain"
-        />
-      </div>
-
-      <div class="mb-1 md:mb-2 text-balance text-center md:text-left uppercase text-gray-600">
-        Engineering Manager / Tech Lead
-      </div>
-      <h1 class="-ml-1 text-7xl text-center md:text-left font-semibold uppercase lg:ml-0">
-        Andrew<br />
-        <span class="tracking-[2px]">Kodkod</span>
-      </h1>
-    </div>
-
-    <div class="mt-2 flex-1 sm:mt-6 lg:mt-0">
-      <div class="prose lg:text-lg">
-        <h2 class="text-balance">
-          <span class="whitespace-nowrap">
-            I’m{" "}
-            <Badge
-              color="red"
-              class="inline-block text-lg font-bold sm:px-2 sm:text-2xl"
-            >
-              Not available for hire
-            </Badge>
-          </span>
-          and here’s why:
-        </h2>
-
-        <ul class="-ml-2 lg:-ml-9 lg:space-y-3.5">
-          {highlights.map((text, index) => <li set:html={marked(text)} />)}
-        </ul>
-      </div>
+<section
+  class="hero"
+  aria-labelledby="intro-title"
+>
+  <p class="eyebrow">
+    <span aria-hidden="true">~/</span> a little about me
+  </p>
+  <div class="intro-identity">
+    <Image
+      src={avatar}
+      alt="Andrew Kodkod"
+      width={112}
+      height={112}
+      densities={[1, 2]}
+      class="portrait"
+      loading="eager"
+    />
+    <div>
+      <h1 id="intro-title">Andrew Kodkod<span class="cursor" aria-hidden="true">_</span></h1>
+      <p class="role">Engineering Manager / Tech Lead</p>
     </div>
   </div>
-  <div class="flex gap-8">
-    <div class="hidden flex-1 lg:block"></div>
-    <div class="flex-1">
-      <div class="flex flex-wrap items-center gap-2 sm:justify-between">
-        <Button
-          href="/#contact-me"
-          class="basis-full sm:mr-4 sm:basis-auto"
-        >
-          Get In Touch
-        </Button>
-
-        <div class="grid grid-cols-4 md:flex md:items-center md:justify-between md:flex-1 md:gap-1">
-          {
-            links.map(({ label, url }, index) => (
-              <>
-                <Button
-                  variant="plain"
-                  color="none"
-                  href={url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  {label}
-                </Button>
-                {index < links.length - 1 && <VerticalDivider class="hidden md:block" />}
-              </>
-            ))
-          }
-        </div>
-      </div>
-    </div>
+  <div class="intro-copy">
+    <p>I build apps and lead development teams.</p>
+    <p>
+      I’ve worked on web, mobile and desktop apps, including multi-million dollar projects. Having run a business
+      myself, I understand the decisions and trade-offs behind the work.
+    </p>
   </div>
-</div>
+  <div class="intro-links">
+    <a href="#portfolio">explore my work ↓</a>
+    <a href="mailto:andrew@kodkod.me">say hello ↗</a>
+  </div>
+  <GraphStat
+    title="in numbers"
+    className="intro-stats"
+    items={[
+      { value: "15+", label: "years of experience" },
+      { value: "50+", label: "projects built" },
+      { value: "10", label: "team members", hint: "maximum team size" }
+    ]}
+  />
+  <Callout
+    title="current status"
+    className="availability"
+  >
+    <p>Not available for hire. Always happy to exchange ideas.</p>
+  </Callout>
+</section>
