@@ -2,7 +2,7 @@
 
 [kodkod.me](https://kodkod.me)
 
-Use Node.js 22.23.4 or newer.
+Use Node.js 22.23.4 or newer and pnpm 12.15.0. The `packageManager` field pins the pnpm version used by Cloudflare Workers Builds.
 
 ```sh
 pnpm install --frozen-lockfile
